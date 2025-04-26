@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    z-index: -3;
+}
+
+/* Header */
+body {
+    background: linear-gradient(to bottom, #2A3B4D, #66348F, #8CC54F);
+    min-height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 3;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    flex: 1;
+}
+
+header{
+    /* background-color: #e2bd6b; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 50px;
+    font-weight: 600px;
+    background: #CBD8F6;
+    color: #2A3B4D;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+nav ul{
+    display: flex;
+    gap: 55px;
+    list-style: none;
+}
+
+nav a{
+    text-decoration: none;
+    background: #CBD8F6;
+    color: #2A3B4D;
+    background-clip: text;
+    color: transparent;
+}
+
+.buton{
+    /* background: #CBD8F6; */
+    color: #2A3B4D;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.buton:hover{
+    transform: translateY(-8px);
+    box-shadow: #66348F 0px 20px 30px -10px;
+}
+
+.bars{
+    display: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: #CBD8F6;
+}
+
+@media (max-width: 950px ){
+    .container header nav,
+    .container header .button {
+        display: none;
+    }
+
+    .bars{
+        display: block;
+    }
+
+    main{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }   
+
+    .content{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .content h1{
+        font-size: 45px;
+        white-space: nowrap;
+    }
+    .image_container img{
+        object-fit: cover;
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* Main */
+main{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+.content h1{
+    font-size: 55px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.content h1 span{
+    background: linear-gradient(90deg, #BA2F4A, #CBD8F6);
+    color: #ffffff;
+    background-clip: text;
+    color: transparent;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.content p:nth-of-type(1) {
+    color: #CBD8F6;
+    font-size: 40px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.content p:nth-of-type(2){
+    color: #CBD8F6;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.image_container{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #CBD8F6;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.image_container:hover{
+    background: #CBD8F6;
+    transform: translateY(-5px);
+    box-shadow: #BA2F4A 0px 20px 30px -10px;
+}
+
+.button{
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bwiki:hover{
+    background: #CBD8F6;
+    transform: translateY(-5px);
+    box-shadow: #BA2F4A 0px 20px 30px -10px;
+}
+
+.ewiki{
+    background: transparent;
+    border: 2px solid #CBD8F6;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* pseudo */
+.ewiki:before{
+    content: "";
+    position: absolute;
+    background: #BA2F4A;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.2s;
+    z-index: -1;
+}
+
+.ewiki:hover::before{
+    width: 100%;
+}
+
+.typing_text{
+    font-size: 34px;
+    font-weight: 600px;
+    min-width: 280px;
+    white-space: nowrap;
+}
+
+.typing_text span{
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 4s steps(20) forwards;
+}
+
+.typing_text span::before{
+    content: " a Web Developer";
+    color: #CBD8F6;
+    animation: words 10s steps(1, end) infinite;
+}
+
+.typing_text span::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;;
+    background: #CBD8F6;
+    right: 0;
+    animation: cursor 0.6s step-start infinite;
+}
+
+@keyframes typing{
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes cursor{
+    50%{
+        background: transparent;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "a Web Developer";
+    }
+    21%, 40%{
+        content: "LCL Wave";
+    }
+    41%, 60%{
+        content: "a Distorted Soul";
+    }
+    61%, 80%{
+        content: "Bocchified";
+    }
+    81%, 100%{
+        content: "Lilyth";
+    }
+}
+
+.social_icon a{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    text-decoration: none;
+    color: #CBD8F6;
+}
+
+.social_icon a:hover{
+    color: #CBD8F6;
+    transform: scale(1.3) translateY(-5px);
+    transform: rotate(360deg);
+}
+
+.card{
+    border-radius: 10px;
+    background: #6A7BA2;
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700px;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after, .card::before{
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-image: conic-gradient(from var(--angle),transparent,#B0C4DE 0%, #E0E0E0 20%, #8B0000, #5F9EA0, #F8F8FF);
+    z-index: -1;
+    padding: 2px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+
+}
+
+/* footer */
+.footer_bottom{
+    padding: 20px;
+    text-align: center;
+    color: #CBD8F6;
+    font-family: 'Roboto Mono', monospace;
+}
