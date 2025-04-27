@@ -306,7 +306,6 @@ main{
 
 .social_icon a:hover{
     color: #CBD8F6;
-    transform: scale(1.3) translateY(-5px);
     transform: rotate(360deg);
 }
 
@@ -316,7 +315,14 @@ main{
     position: relative;
     font-family: 'Roboto Mono', monospace;
     font-weight: 700px;
+    cursor: pointer;
 }
+
+.card:hover::after{
+    letter-spacing: 0.12em;
+    background: var(--bg-color);
+}
+
 
 @property --angle{
     syntax: "<angle>";
